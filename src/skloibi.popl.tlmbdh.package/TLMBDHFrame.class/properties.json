@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "PasteUpMorph",
+	"category" : "skloibi.popl.tlmbdh",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TLMBDHFrame",
+	"type" : "normal"
+}
