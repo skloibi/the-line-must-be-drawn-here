@@ -1,19 +1,19 @@
 dropping/grabbing
 mouseDown: e
-	| line origin |
-	"Handles mouse down events"
-	e redButtonPressed "LMB click"
+	"Event handler for when the mouse is clicked"
+	|line origin|
+	origin := e cursorPoint.
+	e redButtonPressed "LMB clicked"
 		ifTrue: [
-			| handle |
-			"capture click origin"
-			origin := e cursorPoint.
-			"create 'line' on point"
+			|handle|
+			"Create 'line' at origin"
 			line := (LineMorph from: origin to: origin color: Color gray width: 1).
 			self addMorph: line.
-			"handler that captures the mouse until clicking" "TODO switch to trigger on mouse release"
-			handle := HandleMorph new
-				forEachPointDo: [ :p | line setVertices: {origin. p} ] 
+			"Create event handler that monitors mouse movement"
+			handle := HandleMorph new 
+				forEachPointDo: [ :p | line setVertices: {origin. p} ]
 				lastPointDo: [ :p | line borderColor: Color black. line setVertices: {origin. p} ].
-			self currentHand attachMorph: handle. 
+			"Add handle"
+			self currentHand attachMorph: handle.
 		].
-	self changed. "notify parent"
+	self changed.
