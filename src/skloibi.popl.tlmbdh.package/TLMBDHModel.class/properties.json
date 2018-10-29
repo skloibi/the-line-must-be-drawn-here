@@ -1,13 +1,17 @@
 {
 	"commentStamp" : "",
-	"super" : "PasteUpMorph",
+	"super" : "Object",
 	"category" : "skloibi.popl.tlmbdh",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"model"
+		"currLine",
+		"lines",
+		"undoBuffer",
+		"redoBuffer",
+		"isDrawing"
 	],
-	"name" : "TLMBDHFrame",
+	"name" : "TLMBDHModel",
 	"type" : "normal"
 }
