@@ -10,7 +10,8 @@
 		"lines",
 		"undoBuffer",
 		"redoBuffer",
-		"isDrawing"
+		"isDrawing",
+		"isDelimited"
 	],
 	"name" : "TLMBDHModel",
 	"type" : "normal"

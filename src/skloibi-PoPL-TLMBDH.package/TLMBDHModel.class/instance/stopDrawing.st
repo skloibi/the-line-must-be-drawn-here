@@ -1,0 +1,3 @@
+accessing
+stopDrawing
+	isDrawing := false
