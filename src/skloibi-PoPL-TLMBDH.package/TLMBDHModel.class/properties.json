@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "skloibi-PoPL-TLMBDH",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"currLine",
+		"lines",
+		"undoBuffer",
+		"redoBuffer",
+		"isDrawing"
+	],
+	"name" : "TLMBDHModel",
+	"type" : "normal"
+}
