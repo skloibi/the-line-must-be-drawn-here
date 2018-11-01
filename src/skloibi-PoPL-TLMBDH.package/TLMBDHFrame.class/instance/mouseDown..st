@@ -12,14 +12,3 @@ mouseDown: e
 			self changed.
 			^ self.
 		].
-	e yellowButtonPressed
-		ifTrue: [
-			| undoLine |
-			Transcript show: 'RED BUTTON PRESSED'. Transcript cr.
-			(undoLine := model undo) 
-				ifNotNil: [ 
-					self removeMorph: undoLine.
-					self changed.
-					^ self.
-				]
-		].
