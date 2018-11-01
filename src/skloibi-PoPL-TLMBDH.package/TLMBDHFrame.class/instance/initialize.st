@@ -8,3 +8,4 @@ initialize
 	"Specify handled events"
 	self handlesMouseDown: true.
 	self handlesMouseWheel: true.
+	self handlesKeyDown: true.

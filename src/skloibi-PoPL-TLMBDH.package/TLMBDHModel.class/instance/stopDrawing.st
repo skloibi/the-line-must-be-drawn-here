@@ -1,3 +1,5 @@
 accessing
 stopDrawing
-	isDrawing := false
+	isDrawing := false.
+	undoBuffer push: currLine.
+	currLine := nil.
