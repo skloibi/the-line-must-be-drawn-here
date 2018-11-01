@@ -13,4 +13,5 @@ redo
 		line := redoBuffer pop.
 		undoBuffer push: line.
 		^ line.
-	]
+	].
+	^ nil.
