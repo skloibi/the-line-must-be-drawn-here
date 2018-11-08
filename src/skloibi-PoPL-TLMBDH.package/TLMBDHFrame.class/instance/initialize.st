@@ -1,7 +1,7 @@
 initialization
 initialize
-	"Creates a new board"
+	"Creates a new frame and assigns the layouts and panels"
 	super initialize.
-	color := Color white.
+	self layoutPolicy: ProportionalLayout new.
+	self addMorph: TLMBDHDrawingBoard new fullFrame: (LayoutFrame fractions: (0@0 corner: 1 @ 1) offsets: nil).
 	bounds := 0@0 corner: 500@500.
-	model := TLMBDHModel new.
