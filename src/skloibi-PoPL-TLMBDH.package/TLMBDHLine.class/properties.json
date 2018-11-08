@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LineMorph",
+	"category" : "skloibi-PoPL-TLMBDH",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TLMBDHLine",
+	"type" : "normal"
+}
