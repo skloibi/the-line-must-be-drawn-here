@@ -1,3 +1,3 @@
-events-processing
+event handling
 handlesMouseWheel: e
 	^ true.
