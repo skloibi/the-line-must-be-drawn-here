@@ -6,7 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"model"
+		"model",
+		"drawingBoard",
+		"controls"
 	],
 	"name" : "TLMBDHFrame",
 	"type" : "normal"

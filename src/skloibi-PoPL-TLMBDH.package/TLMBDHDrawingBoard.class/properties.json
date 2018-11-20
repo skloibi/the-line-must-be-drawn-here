@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "PasteUpMorph",
+	"super" : "Morph",
 	"category" : "skloibi-PoPL-TLMBDH",
 	"classinstvars" : [ ],
 	"pools" : [ ],
