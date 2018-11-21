@@ -1,6 +1,10 @@
 event handling
 mouseWheel: e
 	"Event handler for scrolling up"
+	
+	"verify that a model is set"
+	model ifNil: [ ^ self ].
+	
 	e isDown
 		ifTrue: [
 			| undoLine |

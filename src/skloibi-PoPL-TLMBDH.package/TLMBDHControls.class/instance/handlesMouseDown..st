@@ -1,4 +1,4 @@
 event handling
 handlesMouseDown: e
-	"accept mouse click events"
+	"accept mouse clicks"
 	^ true.

@@ -6,6 +6,10 @@ mouseMove: e
 		ifFalse: [ ^ self ].
 	
 	currPoint := e cursorPoint.
+	
+	"do nothing if no model was supplied"
+	model ifNil: [ ^ self ].
+	
 	model isDrawing
 		ifFalse: [ ^ self ].
 	"if a line is drawn, update the coordinates and notify the parent"

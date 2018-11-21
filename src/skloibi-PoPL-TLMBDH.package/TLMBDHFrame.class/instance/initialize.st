@@ -3,7 +3,7 @@ initialize
 	"Creates a new frame and assigns the layouts and panels"
 	super initialize.
 	
-	"Use ProportionalLayout to resize submorphs"
+	"Use ProportionalLayout to automatically resize / scale submorphs"
 	self layoutPolicy: ProportionalLayout new.
 	self hResizing: #spaceFill.
 	model := TLMBDHModel new.
@@ -13,7 +13,9 @@ initialize
 		TLMBDHDrawingBoard new
 		model: model.
 		
-	controls := PasteUpMorph new color: Color lightBlue. 
+	"Initalize the controls"
+	controls := TLMBDHControls new
+		model: model.
 		
 	"Add the submorph and position it"
 	self
@@ -22,6 +24,7 @@ initialize
 			LayoutFrame fractions: (0@0 corner: 1@1)
 		).
 		
+	"Add the control morph and position it"
 	self
 		addMorph: controls
 		fullFrame: (

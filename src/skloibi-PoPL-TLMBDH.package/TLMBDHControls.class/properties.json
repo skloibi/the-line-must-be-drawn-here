@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "PasteUpMorph",
+	"category" : "skloibi-PoPL-TLMBDH",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"undoBtn",
+		"redoBtn",
+		"model"
+	],
+	"name" : "TLMBDHControls",
+	"type" : "normal"
+}

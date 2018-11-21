@@ -2,6 +2,10 @@ dropping/grabbing
 mouseDown: e
 	"Event handler for when the mouse is clicked"
 	|line origin|
+	
+	"check that model is set"
+	model ifNil: [ ^ self ].
+	
 	origin := e cursorPoint.
 	e redButtonPressed "LMB clicked"
 		ifTrue: [
