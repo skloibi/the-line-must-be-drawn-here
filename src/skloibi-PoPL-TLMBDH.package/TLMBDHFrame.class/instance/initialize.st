@@ -1,12 +1,14 @@
 initialization
 initialize
 	"Creates a new frame and assigns the layouts and panels"
+	| controls |
 	super initialize.
 	
 	"Use ProportionalLayout to automatically resize / scale submorphs"
 	self layoutPolicy: ProportionalLayout new.
 	self hResizing: #spaceFill.
-	model := TLMBDHModel new.
+	model := TLMBDHModel new
+		delimited: true.
 	
 	"Initialize the drawing board and set the model"
 	drawingBoard := 
@@ -14,9 +16,26 @@ initialize
 		model: model.
 		
 	"Initalize the controls"
-	controls := TLMBDHControls new
-		model: model.
-		
+	controls := AlignmentMorph new 
+		listDirection: #leftToRight;
+		color: Color transparent.
+
+	"Add button to undo last line"
+	controls addMorphBack: (
+		SimpleButtonMorph new
+			target: self;
+			label: '<';
+			actionSelector: #undoLastLine
+	).
+	
+	"Add button to redo last deleted line"
+	controls addMorphBack: (
+		SimpleButtonMorph new
+			target: self;
+			label: '>';
+			actionSelector: #redoLastLine
+	).
+	
 	"Add the submorph and position it"
 	self
 		addMorph: drawingBoard 
@@ -29,6 +48,6 @@ initialize
 		addMorph: controls
 		fullFrame: (
 			LayoutFrame
-				fractions: (0@1 corner: 0.5@1)
+				fractions: (0@1 corner: 1@1)
 				offsets: (0@0 corner: 0@20 negated)
 		).
