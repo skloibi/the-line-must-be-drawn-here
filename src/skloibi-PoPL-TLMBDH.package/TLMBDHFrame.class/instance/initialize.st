@@ -16,9 +16,10 @@ initialize
 		model: model.
 		
 	"Initalize the controls"
-	controls := AlignmentMorph new 
-		listDirection: #leftToRight;
-		color: Color transparent.
+	controls := Morph new
+		layoutPolicy: RowLayout new; 
+		color: Color transparent;
+		cellInset: 5.
 
 	"Add button to undo last line"
 	controls addMorphBack: (
@@ -35,6 +36,30 @@ initialize
 			label: '>';
 			actionSelector: #redoLastLine
 	).
+	
+	controls addMorphBack: (
+		(StringMorph contents: 'Pencil width:'
+  			font: (StrikeFont familyName: 'Bitmap DejaVu Sans' size: 9))
+			color: Color black
+	).
+	
+	"Add dynamic status display"
+	controls addMorphBack: (
+		status := (
+		(StringMorph contents: (model pencilWidth) asString
+  			font: (StrikeFont familyName: 'Bitmap DejaVu Sans' size: 9))
+			color: Color black
+		)
+	).
+	
+	"TODO"
+	"Add button to delimit / unlimit drawing"
+	"controls addMorphBack: (
+		SimpleSwitchMorph new
+			target: [:e| Transcript show: e; cr];
+			label: 'limit';
+			actionSelector: #value
+	)."
 	
 	"Add the submorph and position it"
 	self

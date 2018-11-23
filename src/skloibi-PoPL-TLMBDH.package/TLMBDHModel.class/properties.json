@@ -10,7 +10,8 @@
 		"undoBuffer",
 		"redoBuffer",
 		"isDrawing",
-		"isDelimited"
+		"isDelimited",
+		"pencilWidth"
 	],
 	"name" : "TLMBDHModel",
 	"type" : "normal"

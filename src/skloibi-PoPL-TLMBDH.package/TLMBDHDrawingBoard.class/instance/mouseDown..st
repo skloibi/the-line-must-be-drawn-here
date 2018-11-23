@@ -10,7 +10,7 @@ mouseDown: e
 	e redButtonPressed "LMB clicked"
 		ifTrue: [
 			"Create 'line' at origin"
-			line := (TLMBDHLine from: origin to: origin color: Color gray width: 1).
+			line := (TLMBDHLine from: origin to: origin color: Color gray width: model pencilWidth).
 			model startDrawing: line.
 			self addMorph: line.
 			self changed.
