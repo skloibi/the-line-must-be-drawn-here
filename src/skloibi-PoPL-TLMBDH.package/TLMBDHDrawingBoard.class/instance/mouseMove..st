@@ -1,24 +1,20 @@
 event handling
 mouseMove: e
-	| currPoint line origin |
+	| currPoint origin |
 	"do nothing unless the left button is clicked"
 	e redButtonPressed
 		ifFalse: [ ^ self ].
 	
 	currPoint := e cursorPoint.
 	
-	"do nothing if no model was supplied"
-	model ifNil: [ ^ self ].
-	
-	model isDrawing
-		ifFalse: [ ^ self ].
+	currLine
+		ifNil: [ ^ self ].
 	"if a line is drawn, update the coordinates and notify the parent"
-	line := model currLine.
-	origin := line vertices at: 1.
+	origin := currLine vertices at: 1.
 	"check if points are restricted to view bounds"
-	model isDelimited 
+	limitToFrame
 		"if so, normalize the target point"
 		ifTrue: [ currPoint := currPoint adhereTo: bounds ].
 	
-	line setVertices: {origin. currPoint}.
+	currLine setVertices: {origin. currPoint}.
 	self changed.

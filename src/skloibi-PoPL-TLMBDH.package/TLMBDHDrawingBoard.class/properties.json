@@ -6,7 +6,11 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"model"
+		"model",
+		"currLine",
+		"limitToFrame",
+		"penWidth",
+		"penColor"
 	],
 	"name" : "TLMBDHDrawingBoard",
 	"type" : "normal"
