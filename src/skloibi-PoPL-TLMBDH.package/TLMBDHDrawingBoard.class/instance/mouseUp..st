@@ -7,7 +7,7 @@ mouseUp: e
 		
 	currLine
 		ifNil: [ ^ self ].
-	currLine borderColor: Color black.
+	currLine borderColor: penColor.
 	model confirmLine: currLine.
 	"Signal end of drawing by unsetting the current line"
 	currLine := nil.

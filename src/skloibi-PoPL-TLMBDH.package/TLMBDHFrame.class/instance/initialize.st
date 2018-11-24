@@ -7,8 +7,7 @@ initialize
 	"Use ProportionalLayout to automatically resize / scale submorphs"
 	self layoutPolicy: ProportionalLayout new.
 	self hResizing: #spaceFill.
-	model := TLMBDHModel new
-		delimited: true.
+	model := TLMBDHModel new.
 	
 	"Initialize the drawing board and set the model"
 	drawingBoard := 
@@ -46,11 +45,23 @@ initialize
 	"Add dynamic status display"
 	controls addMorphBack: (
 		status := (
-		(StringMorph contents: (model pencilWidth) asString
+		(StringMorph contents: (drawingBoard penWidth) asString
   			font: (StrikeFont familyName: 'Bitmap DejaVu Sans' size: 9))
 			color: Color black
 		)
 	).
+	
+	"Add color palette"
+	{ Color black. Color blue. Color red. Color yellow. Color green } do:
+		[ :each |
+			controls addMorphBack: (
+				SimpleButtonMorph new
+					target: [ drawingBoard penColor: each ];
+					label: '';
+					actionSelector: #value;
+					color: each 
+			)
+		].
 	
 	"TODO"
 	"Add button to delimit / unlimit drawing"

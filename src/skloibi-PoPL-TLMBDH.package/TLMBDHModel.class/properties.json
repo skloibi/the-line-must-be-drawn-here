@@ -6,12 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"currLine",
 		"undoBuffer",
-		"redoBuffer",
-		"isDrawing",
-		"isDelimited",
-		"pencilWidth"
+		"redoBuffer"
 	],
 	"name" : "TLMBDHModel",
 	"type" : "normal"
