@@ -1,7 +1,7 @@
 initialization
 initialize
 	"Creates a new frame and assigns the layouts and panels"
-	| controls |
+	| controls colorInput |
 	super initialize.
 	
 	"Use ProportionalLayout to automatically resize / scale submorphs"
@@ -53,19 +53,39 @@ initialize
 	
 	"Add color palette"
 	{ Color black. Color blue. Color red. Color yellow. Color green } do:
-		[ :each |
+		[ :c |
 			controls addMorphBack: (
 				SimpleButtonMorph new
-					target: [ drawingBoard penColor: each ];
+					target: [ drawingBoard penColor: c ];
 					label: '';
 					actionSelector: #value;
-					color: each 
+					color: c 
 			)
 		].
 
 	"Add button to delimit / unlimit drawing"
 	controls addMorphBack: (
 		TLMBDHToggleButton new action: [ drawingBoard toggleLimitToFrame ]
+	).
+	
+	"Add a color input field"
+	colorInput := 
+		TextMorph new
+		contents: '000000';
+		color: Color black.
+	
+	controls addMorphBack: colorInput.
+	
+	controls addMorphBack: (
+		SimpleButtonMorph new
+			target: [
+				| newColor |
+				newColor := TLMBDHSafeColor fromHexString: (colorInput contents asString).
+				drawingBoard penColor: newColor.
+				colorInput contents: (newColor asHexString).
+			];
+			label: 'Select color';
+			actionSelector: #value 
 	).
 	
 	"Add the submorph and position it"
