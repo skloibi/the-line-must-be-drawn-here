@@ -1,16 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "LineMorph",
+	"super" : "SimpleSwitchMorph",
 	"category" : "skloibi-PoPL-TLMBDH",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"active",
-		"p0",
-		"p1",
-		"frame"
+		"action"
 	],
-	"name" : "TLMBDHLine",
+	"name" : "TLMBDHToggleButton",
 	"type" : "normal"
 }

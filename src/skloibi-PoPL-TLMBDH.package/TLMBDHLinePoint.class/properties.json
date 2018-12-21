@@ -1,16 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "LineMorph",
+	"super" : "PolygonMorph",
 	"category" : "skloibi-PoPL-TLMBDH",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"active",
-		"p0",
-		"p1",
-		"frame"
+		"moving",
+		"moveLinePointTo"
 	],
-	"name" : "TLMBDHLine",
+	"name" : "TLMBDHLinePoint",
 	"type" : "normal"
 }

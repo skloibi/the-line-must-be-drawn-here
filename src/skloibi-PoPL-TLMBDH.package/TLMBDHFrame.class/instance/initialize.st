@@ -62,15 +62,11 @@ initialize
 					color: each 
 			)
 		].
-	
-	"TODO"
+
 	"Add button to delimit / unlimit drawing"
-	"controls addMorphBack: (
-		SimpleSwitchMorph new
-			target: [:e| Transcript show: e; cr];
-			label: 'limit';
-			actionSelector: #value
-	)."
+	controls addMorphBack: (
+		TLMBDHToggleButton new action: [ drawingBoard toggleLimitToFrame ]
+	).
 	
 	"Add the submorph and position it"
 	self

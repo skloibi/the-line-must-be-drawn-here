@@ -11,10 +11,9 @@ mouseMove: e
 		ifNil: [ ^ self ].
 	"if a line is drawn, update the coordinates and notify the parent"
 	origin := currLine vertices at: 1.
-	"check if points are restricted to view bounds"
-	limitToFrame
-		"if so, normalize the target point"
-		ifTrue: [ currPoint := currPoint adhereTo: bounds ].
+	
+	"normalize point"
+	currPoint := self normalize: currPoint. 
 	
 	currLine setVertices: {origin. currPoint}.
 	self changed.

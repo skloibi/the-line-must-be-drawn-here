@@ -10,7 +10,8 @@
 		"currLine",
 		"limitToFrame",
 		"penWidth",
-		"penColor"
+		"penColor",
+		"editedLine"
 	],
 	"name" : "TLMBDHDrawingBoard",
 	"type" : "normal"
